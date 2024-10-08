@@ -1,0 +1,21 @@
+name: ci-go
+
+on: [push, pull_request]
+
+jobs:
+    ci-go:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout files
+              uses: actions/checkout@v2
+            - name: install GCC
+              run: |
+                 sudo apt-get update
+                 sudo apt-get isntall -y gcc
+            - name: Build
+              run: |     
+                    gcc hello.c -o hello
+            - name: run
+              run: ./hello
+              
+
