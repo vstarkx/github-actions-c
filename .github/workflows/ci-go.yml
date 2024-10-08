@@ -8,7 +8,7 @@ jobs:
         steps:
             - name: Checkout files
               uses: actions/checkout@v2
-            - name: install GCC
+            - name: build go    
               run: |
                  sudo apt-get update
                  sudo apt-get install -y gcc
