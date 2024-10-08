@@ -11,7 +11,7 @@ jobs:
             - name: install GCC
               run: |
                  sudo apt-get update
-                 sudo apt-get isntall -y gcc
+                 sudo apt-get install -y gcc
             - name: Build
               run: |     
                     gcc hello.c -o hello
