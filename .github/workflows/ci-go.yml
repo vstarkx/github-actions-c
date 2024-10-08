@@ -8,14 +8,10 @@ jobs:
         steps:
             - name: Checkout files
               uses: actions/checkout@v2
-            - name: install GCC
-              run: |
-                 sudo apt-get update
-                 sudo apt-get install -y gcc
-            - name: Build
-              run: |     
-                    gcc hello.c -o hello
-            - name: run
-              run: ./hello
+            - name: Build the Docker 
+              run: docker build -t my-go-app .
+      
+            - name: Run the Docker 
+              run: docker run my-go-app
               
 
